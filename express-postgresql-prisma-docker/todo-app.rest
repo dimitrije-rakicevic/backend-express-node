@@ -1,0 +1,47 @@
+# client simulator
+### GET /
+GET http://localhost:5000
+
+### register user
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username": "dimi@gmail.com",
+    "password": "dimi1234"
+}
+
+### login user
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "username": "dimi@gmail.com",
+    "password": "dimi1234"
+}
+
+### fetch all todos GET /todos (protected)
+GET http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ1MzQwOTAxLCJleHAiOjE3NDU0MjczMDF9._IKVyghXLwd1pOi8Dh-F72BzaC1trAK2cbcahFQAnqg
+
+### creates new todo POST /todos (protected)
+POST http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ1MzQwOTAxLCJleHAiOjE3NDU0MjczMDF9._IKVyghXLwd1pOi8Dh-F72BzaC1trAK2cbcahFQAnqg
+Content-Type: application/json
+
+{
+    "task": "Go to barber!"
+}
+
+### update a todo PUT /todos/:id (protected)
+PUT http://localhost:5000/todos/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ1MzM5OTM0LCJleHAiOjE3NDU0MjYzMzR9.E_nqkMV4zDP-VsiN5syLYbeEgUA3g0drEueaMevY97k
+
+{
+    "completed": 1
+}
+
+### Delets todo DELETE /todos (protected) Usually it shouldnt be really(hard) deleted, just into table insert column     soft_delete: boolean so data can be restored(retrieved)
+DELETE http://localhost:5000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ1MzM5OTM0LCJleHAiOjE3NDU0MjYzMzR9.E_nqkMV4zDP-VsiN5syLYbeEgUA3g0drEueaMevY97k

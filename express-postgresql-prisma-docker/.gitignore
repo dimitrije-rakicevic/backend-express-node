@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+.env
+.env.*.local
+
+# Logs
+logs
+*.log
+log/
+*.log.*
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+prisma/migrations/
+prisma/.env
+*.sqlite
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+Dockerfile*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Build
+dist/
+build/
+tmp/
+temp/
+
+# Coverage
+coverage/
+
+# TypeScript (ako koristiš)
+*.tsbuildinfo
